@@ -1,0 +1,87 @@
+.progress-circle-container {
+  position: relative;
+  display: inline-block;
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3));
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10b981;
+  text-shadow: 0 2px 8px rgba(16, 185, 129, 0.5);
+  letter-spacing: -0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .progress-percentage {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-circle-container {
+    filter: drop-shadow(0 3px 10px rgba(16, 185, 129, 0.3));
+  }
+
+  .progress-percentage {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .progress-percentage {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-circle-container {
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.3));
+  }
+
+  .progress-percentage {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation for progress circle */
+.progress-circle-container svg {
+  transition: all 0.3s ease;
+}
+
+.progress-circle-container:hover svg {
+  filter: brightness(1.1);
+}
+
+/* Circle path styling */
+.progress-circle-container svg circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* Dark theme enhancements */
+.progress-circle-container svg {
+  background: transparent;
+}
+
+/* Glow effect for completed circles */
+.progress-circle-container.completed {
+  filter: drop-shadow(0 4px 16px rgba(16, 185, 129, 0.5));
+}
+
+.progress-circle-container.completed .progress-percentage {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 2px 8px rgba(16, 185, 129, 0.5);
+  }
+  50% {
+    text-shadow: 0 2px 16px rgba(16, 185, 129, 0.8);
+  }
+}

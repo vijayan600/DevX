@@ -1,0 +1,87 @@
+/* ─── Outer cell (fills the grid column) ─── */
+.checkbox-cell {
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.25rem;
+  transition: background 0.15s ease;
+}
+
+.checkbox-cell:not(.future):hover {
+  background: #222;
+}
+
+.checkbox-cell.future {
+  opacity: 0.35;
+}
+
+/* ─── The actual box ─── */
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid #333;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.checkbox-cell:not(.future):hover .checkbox {
+  border-color: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.25);
+}
+
+/* ─── Checked state ─── */
+.checkbox.checked {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.checkmark {
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ─── Responsive sizing ─── */
+@media (max-width: 768px) {
+  .checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+  }
+
+  .checkmark {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+  }
+
+  .checkmark {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border-width: 1.5px;
+  }
+
+  .checkmark {
+    font-size: 0.65rem;
+  }
+}

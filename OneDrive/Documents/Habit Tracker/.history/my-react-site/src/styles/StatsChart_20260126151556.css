@@ -1,0 +1,396 @@
+.stats-chart {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+}
+
+.stats-chart h2 {
+  color: #e5e5e5;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.stats-chart h3 {
+  color: #e5e5e5;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.overview-card {
+  background: linear-gradient(135deg, #111 0%, #0d1f17 100%);
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.overview-card:hover {
+  border-color: #10b981;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+.overview-label {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overview-value {
+  color: #10b981;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.overview-subtext {
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Chart Container */
+.chart-container {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Line Chart */
+.line-chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1rem 0;
+  background: #0a0a0a;
+  border-radius: 8px;
+  border: 1px solid #1a1a1a;
+}
+
+.line-chart-svg {
+  width: 100%;
+  height: 500px;
+  min-width: 100%;
+  display: block;
+}
+
+.chart-point {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-point:hover {
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.9));
+  transform: scale(1.2);
+}
+
+/* Habit Stats Grid */
+.habit-stats-grid {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d1f17 100%);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.stat-emoji {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.stat-name {
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stat-percentage {
+  color: #10b981;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(16, 185, 129, 0.3);
+}
+
+/* Scrollbar for chart */
+.line-chart-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.line-chart-wrapper::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 5px;
+  margin: 0 1rem;
+}
+
+.line-chart-wrapper::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+  border: 2px solid #0a0a0a;
+}
+
+.line-chart-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .stats-chart {
+    padding: 1.5rem;
+  }
+
+  .chart-container,
+  .habit-stats-grid {
+    padding: 1.5rem;
+  }
+
+  .overview-value {
+    font-size: 1.75rem;
+  }
+
+  .line-chart-svg {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-chart {
+    padding: 1rem;
+  }
+
+  .stats-chart h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-chart h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .chart-container,
+  .habit-stats-grid {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .overview-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .overview-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .overview-value {
+    font-size: 1.5rem;
+  }
+
+  .overview-label {
+    font-size: 0.8rem;
+  }
+
+  .stats-cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .stat-emoji {
+    font-size: 1.25rem;
+  }
+
+  .stat-name {
+    font-size: 0.85rem;
+  }
+
+  .stat-percentage {
+    font-size: 0.8rem;
+  }
+
+  .line-chart-svg {
+    height: 400px;
+    min-width: 600px;
+  }
+
+  .line-chart-wrapper {
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-chart {
+    padding: 0.75rem;
+  }
+
+  .stats-chart h2 {
+    font-size: 1.375rem;
+  }
+
+  .stats-chart h3 {
+    font-size: 1rem;
+  }
+
+  .chart-container,
+  .habit-stats-grid {
+    padding: 0.875rem;
+    border-radius: 8px;
+  }
+
+  .overview-cards {
+    gap: 0.5rem;
+  }
+
+  .overview-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .overview-value {
+    font-size: 1.375rem;
+  }
+
+  .overview-label {
+    font-size: 0.75rem;
+  }
+
+  .overview-subtext {
+    font-size: 0.7rem;
+  }
+
+  .stats-cards {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .line-chart-svg {
+    height: 350px;
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-chart {
+    padding: 0.5rem;
+  }
+
+  .stats-chart h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats-chart h3 {
+    font-size: 0.95rem;
+  }
+
+  .overview-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-card {
+    padding: 0.875rem;
+  }
+
+  .overview-value {
+    font-size: 1.25rem;
+  }
+
+  .chart-container,
+  .habit-stats-grid {
+    padding: 0.75rem;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 0.875rem;
+  }
+
+  .stat-emoji {
+    font-size: 1.125rem;
+  }
+
+  .stat-name {
+    font-size: 0.8rem;
+  }
+
+  .stat-percentage {
+    font-size: 0.75rem;
+  }
+
+  .line-chart-svg {
+    height: 300px;
+    min-width: 400px;
+  }
+}

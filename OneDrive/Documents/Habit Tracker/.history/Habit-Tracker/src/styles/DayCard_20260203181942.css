@@ -1,0 +1,254 @@
+.day-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  min-height: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.day-card:hover {
+  transform: translateY(-4px);
+  border-color: #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.day-card.today {
+  border: 2px solid #10b981;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #111 0%, #0d1f17 100%);
+}
+
+.day-card.today:hover {
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+}
+
+.day-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.day-card-header h3 {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.day-card.today .day-card-header h3 {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.day-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0 0;
+  font-weight: 400;
+}
+
+.today-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.day-card-progress {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0.5rem 0;
+}
+
+.day-card-stats {
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #222;
+  margin-bottom: 0.5rem;
+}
+
+.stats-text {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.day-card.today .stats-text {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.day-card-tasks {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-card-tasks h4 {
+  color: #10b981;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.day-card-tasks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.day-card-tasks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #888;
+  font-size: 0.85rem;
+  background: #0a0a0a;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: 1px solid #1a1a1a;
+}
+
+.day-card-tasks li:hover {
+  background: #151515;
+  border-color: #222;
+}
+
+.task-check {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.task-emoji {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.task-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #aaa;
+}
+
+.no-tasks {
+  color: #555;
+  font-style: italic;
+  justify-content: center;
+  padding: 1.5rem 0.75rem;
+}
+
+.more-tasks {
+  color: #10b981;
+  font-weight: 600;
+  justify-content: center;
+  cursor: pointer;
+  background: #0a0a0a;
+}
+
+.more-tasks:hover {
+  background: #0f2419;
+  border-color: #10b981;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .day-card {
+    min-height: 380px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .day-card {
+    min-height: 350px;
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .day-card-header h3 {
+    font-size: 1rem;
+  }
+
+  .day-date {
+    font-size: 0.85rem;
+  }
+
+  .today-badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .day-card-tasks li {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .task-emoji {
+    font-size: 0.95rem;
+  }
+
+  .task-check {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-card {
+    min-height: auto;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .day-card-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .day-date {
+    font-size: 0.8rem;
+  }
+
+  .day-card-progress {
+    padding: 0.75rem 0;
+  }
+
+  .day-card-tasks h4 {
+    font-size: 0.85rem;
+  }
+
+  .day-card-tasks li {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .task-emoji {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,105 @@
+.habit-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-row {
+  display: grid;
+  grid-template-columns: 220px repeat(31, 35px) 100px;
+  gap: 1px;
+  background: #222;
+  padding: 1px;
+}
+
+.habit-name-cell {
+  background: #1a4d3a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.habit-emoji {
+  font-size: 1.25rem;
+}
+
+.habit-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #e5e5e5;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.habit-name-cell:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+.checkbox-cell {
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.checkbox-cell.future {
+  opacity: 0.3;
+  cursor: not-allowed !important;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: #1a1a1a;
+}
+
+.checkbox.checked {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.checkmark {
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.checkbox-cell:not(.future):hover .checkbox {
+  border-color: #10b981;
+  transform: scale(1.1);
+}
+
+.progress-cell {
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-czontent: center;
+  font-size: 1rem;
+}

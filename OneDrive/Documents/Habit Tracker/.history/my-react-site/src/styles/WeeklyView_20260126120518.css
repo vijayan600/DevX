@@ -1,0 +1,23 @@
+.weekly-view {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.weekly-view h2 {
+  color: #e5e5e5;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .days-grid {
+    grid-template-columns: 1fr;
+  }
+}

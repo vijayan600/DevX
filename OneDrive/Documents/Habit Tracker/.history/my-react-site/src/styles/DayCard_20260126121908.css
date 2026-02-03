@@ -1,0 +1,172 @@
+.day-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.day-card:hover {
+  transform: translateY(-2px);
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.day-card.today {
+  border: 2px solid #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.day-card.today:hover {
+  box-shadow: 0 4px 24px rgba(16, 185, 129, 0.3);
+}
+
+.day-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.day-card-header h3 {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.day-card.today .day-card-header h3 {
+  color: #10b981;
+}
+
+.day-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.today-badge {
+  background: #10b981;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-card-progress {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.day-card-stats {
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #222;
+}
+
+.stats-text {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.day-card.today .stats-text {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.day-card-tasks {
+  flex: 1;
+}
+
+.day-card-tasks h4 {
+  color: #10b981;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.day-card-tasks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.day-card-tasks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  color: #888;
+  font-size: 0.85rem;
+  background: #0a0a0a;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.day-card-tasks li:hover {
+  background: #151515;
+}
+
+.task-check {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.task-emoji {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.task-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-tasks {
+  color: #555;
+  font-style: italic;
+  justify-content: center;
+}
+
+.more-tasks {
+  color: #10b981;
+  font-weight: 600;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.more-tasks:hover {
+  background: #0f2419;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .day-card {
+    min-height: 350px;
+    padding: 1.25rem;
+  }
+
+  .day-card-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-card {
+    min-height: auto;
+  }
+}
