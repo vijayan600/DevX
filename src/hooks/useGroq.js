@@ -1,6 +1,6 @@
 // src/hooks/useGroq.js
 import { useState, useCallback } from 'react';
-import { streamGroq } from '../utils/groqClient';
+import { streamGroq } from '../utils/geminiClient';
 
 export function useGroq() {
   const [loading, setLoading] = useState(false);
